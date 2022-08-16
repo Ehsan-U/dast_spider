@@ -5,6 +5,8 @@ from scrapy_playwright.page import PageMethod
 class DastSpiderSpider(scrapy.Spider):
     name = 'dast_spider'
     allowed_domains = ['dastelefonbuch.de']
+    i = 0
+
     def start_requests(self):
         urls = []
         with open("spiders/urls.txt",'r') as f:
@@ -26,6 +28,7 @@ class DastSpiderSpider(scrapy.Spider):
             })
 
     async def parse(self, response):
+        print(" [+] Started")
         page = response.meta.get("playwright_page")
         sel = scrapy.Selector(text=response.text)
         await page.close()
@@ -44,9 +47,10 @@ class DastSpiderSpider(scrapy.Spider):
                 temp = addr.strip().split(' ')
                 postal = temp[0]
                 locality = temp[1]
-
+            self.i +=1
+            print(f"\r [+] Extracted items: {i}",end='')
             yield {"Name":name,"Street_Address":street_addr,"Postal":postal,"Locality":locality}
-
+        print(" [+] Finished")
 
 
             
