@@ -1,0 +1,1 @@
+https://pflegefinder.bkk-dachverband.de/suche/searchresult.php?searchdata%5Bkeyword%5D=&searchdata%5Bzip%5D=Hannover&searchdata%5Blocation%5D=19891%7CAGS&searchdata%5BmaxDistance%5D=50&searchdata%5Btype%5D%5B%5D=nursing_service&searchdata%5Btype%5D%5B%5D=day_care&searchdata%5Btype%5D%5B%5D=aua
